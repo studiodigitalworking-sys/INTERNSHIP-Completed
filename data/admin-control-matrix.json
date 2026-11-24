@@ -1,0 +1,451 @@
+{
+ "Role Permissions": [
+  {
+   "Module / Action": "View platform health",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "Scoped",
+   "ACADEMIC_ADMIN": "Academic metrics",
+   "FINANCE_ADMIN": "Finance metrics",
+   "CERTIFICATE_OFFICER": "Credential metrics",
+   "COLLEGE_ADMIN": "Institution only",
+   "MENTOR": "Assigned",
+   "HOST_SUPERVISOR": "Assigned",
+   "STUDENT": "Own only",
+   "AUDITOR": "Read-only scoped",
+   "AI_AGENT": "Read-only summary"
+  },
+  {
+   "Module / Action": "Manage root settings",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "No",
+   "ACADEMIC_ADMIN": "No",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "No",
+   "MENTOR": "No",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "No",
+   "AUDITOR": "No",
+   "AI_AGENT": "No"
+  },
+  {
+   "Module / Action": "Create / revoke staff roles",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "Delegated roles only",
+   "ACADEMIC_ADMIN": "No",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "Institution roles only",
+   "MENTOR": "No",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "No",
+   "AUDITOR": "No",
+   "AI_AGENT": "No"
+  },
+  {
+   "Module / Action": "Manage programmes and versions",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "Delegated",
+   "ACADEMIC_ADMIN": "Academic scope",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "Institution proposal",
+   "MENTOR": "No",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "No",
+   "AUDITOR": "Read-only",
+   "AI_AGENT": "Draft recommendation"
+  },
+  {
+   "Module / Action": "Approve eligibility exception",
+   "ROOT_OWNER": "Full with reason",
+   "PLATFORM_ADMIN": "Delegated",
+   "ACADEMIC_ADMIN": "Academic scope",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "Institution authority only",
+   "MENTOR": "Recommend",
+   "HOST_SUPERVISOR": "Evidence only",
+   "STUDENT": "Request",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "Recommend only"
+  },
+  {
+   "Module / Action": "Correct attendance",
+   "ROOT_OWNER": "Full with evidence",
+   "PLATFORM_ADMIN": "Delegated",
+   "ACADEMIC_ADMIN": "Academic scope",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "Institution scope",
+   "MENTOR": "Assigned review",
+   "HOST_SUPERVISOR": "Host evidence",
+   "STUDENT": "Request own",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "Detect anomaly only"
+  },
+  {
+   "Module / Action": "Change marks / results",
+   "ROOT_OWNER": "Full if authorised + audit",
+   "PLATFORM_ADMIN": "Delegated + audit",
+   "ACADEMIC_ADMIN": "Academic scope + audit",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "Only delegated authority",
+   "MENTOR": "Propose/review",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "Appeal/request",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "No write"
+  },
+  {
+   "Module / Action": "Manage payment/refund",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "Delegated",
+   "ACADEMIC_ADMIN": "No",
+   "FINANCE_ADMIN": "Finance scope",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "View own institution if permitted",
+   "MENTOR": "No",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "Pay/view own",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "No write"
+  },
+  {
+   "Module / Action": "Issue certificate",
+   "ROOT_OWNER": "Full after evidence/approval",
+   "PLATFORM_ADMIN": "Delegated workflow",
+   "ACADEMIC_ADMIN": "Academic approval scope",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "Process only after approval",
+   "COLLEGE_ADMIN": "Institution approval scope",
+   "MENTOR": "Recommend",
+   "HOST_SUPERVISOR": "Completion evidence",
+   "STUDENT": "Download own",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "Draft only"
+  },
+  {
+   "Module / Action": "Revoke / supersede credential",
+   "ROOT_OWNER": "Full with reason",
+   "PLATFORM_ADMIN": "Delegated + audit",
+   "ACADEMIC_ADMIN": "If institution credential and authorised",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "Process approved action",
+   "COLLEGE_ADMIN": "Institution scope",
+   "MENTOR": "No",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "Request correction",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "No write"
+  },
+  {
+   "Module / Action": "View audit trail",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "Scoped",
+   "ACADEMIC_ADMIN": "Academic scope",
+   "FINANCE_ADMIN": "Finance scope",
+   "CERTIFICATE_OFFICER": "Credential scope",
+   "COLLEGE_ADMIN": "Institution scope",
+   "MENTOR": "Own action records",
+   "HOST_SUPERVISOR": "Own action records",
+   "STUDENT": "Own history",
+   "AUDITOR": "Scoped read-only",
+   "AI_AGENT": "Own AI actions only"
+  },
+  {
+   "Module / Action": "Configure AI agent permissions",
+   "ROOT_OWNER": "Full",
+   "PLATFORM_ADMIN": "No",
+   "ACADEMIC_ADMIN": "No",
+   "FINANCE_ADMIN": "No",
+   "CERTIFICATE_OFFICER": "No",
+   "COLLEGE_ADMIN": "No",
+   "MENTOR": "No",
+   "HOST_SUPERVISOR": "No",
+   "STUDENT": "No",
+   "AUDITOR": "Audit",
+   "AI_AGENT": "No"
+  }
+ ],
+ "Exception Types": [
+  {
+   "Exception Code": "DATA_ENTRY_CORRECTION",
+   "Purpose": "Correct wrong profile/source data",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Original document or verified request",
+   "Audit Requirement": "Before/after + actor + timestamp"
+  },
+  {
+   "Exception Code": "SERVER_OR_SYNC_FAILURE",
+   "Purpose": "Repair failed import/sync/system error",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Logs, event ID, import file",
+   "Audit Requirement": "Before/after + incident reference"
+  },
+  {
+   "Exception Code": "ATTENDANCE_EVIDENCE_CORRECTION",
+   "Purpose": "Correct mistaken attendance",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Host sheet, session logs, supervisor confirmation",
+   "Audit Requirement": "Original event retained"
+  },
+  {
+   "Exception Code": "ELIGIBILITY_EXCEPTION",
+   "Purpose": "Resolve documented eligibility edge case",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Rule result and authority",
+   "Audit Requirement": "Exception remains visible"
+  },
+  {
+   "Exception Code": "ASSESSMENT_REEVALUATION",
+   "Purpose": "Review disputed assessment",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Submission, rubric, reviewer notes",
+   "Audit Requirement": "Old and new result retained"
+  },
+  {
+   "Exception Code": "MARKS_ADJUSTMENT",
+   "Purpose": "Adjust marks after review",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Rubric and approval",
+   "Audit Requirement": "Old/new marks + approver"
+  },
+  {
+   "Exception Code": "APPROVED_WAIVER",
+   "Purpose": "Waive a requirement under an authorised rule",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Policy and approval",
+   "Audit Requirement": "Waiver scope and expiry"
+  },
+  {
+   "Exception Code": "CERTIFICATE_MANUAL_ISSUANCE",
+   "Purpose": "Manual certificate after genuine requirements verified",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Evidence and issuer authority",
+   "Audit Requirement": "Credential event and audit"
+  },
+  {
+   "Exception Code": "CERTIFICATE_REISSUE",
+   "Purpose": "Correct spelling/details or reissue file",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Old credential and correction evidence",
+   "Audit Requirement": "Link old/new credential"
+  },
+  {
+   "Exception Code": "CREDENTIAL_REVOCATION",
+   "Purpose": "Revoke invalid/withdrawn credential",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Reason and evidence",
+   "Audit Requirement": "Permanent status history"
+  },
+  {
+   "Exception Code": "PAYMENT_RECONCILIATION",
+   "Purpose": "Resolve gateway mismatch",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Gateway reference and bank/settlement evidence",
+   "Audit Requirement": "Ledger correction event"
+  },
+  {
+   "Exception Code": "DUPLICATE_PROFILE_MERGE",
+   "Purpose": "Merge duplicate student records",
+   "Required Reason": "Yes",
+   "Evidence Recommended": "Identity verification",
+   "Audit Requirement": "Source/target mapping retained"
+  }
+ ],
+ "Credential States": [
+  {
+   "State": "DRAFT",
+   "Meaning": "Credential prepared but not issued",
+   "Public QR Display": "Not publicly valid",
+   "Allowed Next State": "APPROVAL_PENDING"
+  },
+  {
+   "State": "APPROVAL_PENDING",
+   "Meaning": "Evidence or authorised approval pending",
+   "Public QR Display": "Pending / not valid",
+   "Allowed Next State": "ISSUED or DRAFT"
+  },
+  {
+   "State": "ISSUED",
+   "Meaning": "Issued and currently valid",
+   "Public QR Display": "VALID",
+   "Allowed Next State": "CORRECTED / SUPERSEDED / REVOKED"
+  },
+  {
+   "State": "CORRECTED",
+   "Meaning": "Corrected credential version issued",
+   "Public QR Display": "Corrected; link to current version",
+   "Allowed Next State": "SUPERSEDED / REVOKED"
+  },
+  {
+   "State": "SUPERSEDED",
+   "Meaning": "Replaced by a newer credential",
+   "Public QR Display": "Superseded; show replacement link",
+   "Allowed Next State": "Terminal except audit"
+  },
+  {
+   "State": "REVOKED",
+   "Meaning": "Credential withdrawn",
+   "Public QR Display": "REVOKED with public notice",
+   "Allowed Next State": "Terminal except audit"
+  }
+ ],
+ "Owner Dashboard Modules": [
+  {
+   "Section": "Overview & Health",
+   "Required Controls": "Metrics, incidents, failed jobs, provider status",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Owner action log"
+  },
+  {
+   "Section": "Student 360",
+   "Required Controls": "Profile, application, cohort, attendance, marks, payment, credentials",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Field-level access log"
+  },
+  {
+   "Section": "Eligibility",
+   "Required Controls": "Rule trace, correction, exception approval",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Reason + evidence"
+  },
+  {
+   "Section": "Attendance & Hours",
+   "Required Controls": "Separate live, host, field, training, self-study hours",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Append-only adjustment"
+  },
+  {
+   "Section": "Marks & Results",
+   "Required Controls": "Rubric, pass/fail, re-evaluation, moderation",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Before/after + reason"
+  },
+  {
+   "Section": "Payments",
+   "Required Controls": "Orders, refunds, receipts, settlements, reconciliation",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Ledger + gateway event"
+  },
+  {
+   "Section": "Certificate Factory",
+   "Required Controls": "Templates, issue, reissue, revoke, QR registry",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Credential event"
+  },
+  {
+   "Section": "Users & Roles",
+   "Required Controls": "Create users, assign scoped roles, suspend/recover",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Role-change audit + MFA"
+  },
+  {
+   "Section": "AI Control",
+   "Required Controls": "Tool permissions, approval queue, logs, disable switch",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Human decision separate"
+  },
+  {
+   "Section": "Backup & Restore",
+   "Required Controls": "Backup status, restore drill, export",
+   "High-Risk?": "Yes",
+   "Audit / Approval": "Backup event"
+  }
+ ],
+ "MKS Subject Examples": [
+  {
+   "Subject Family": "Communication",
+   "Subject / Programme": "Communication in Everyday Life",
+   "Practical Evidence": "Daily communication observation journal",
+   "Suggested Assessment": "Reflection + presentation",
+   "Status Before Launch": "Syllabus and mentor approval"
+  },
+  {
+   "Subject Family": "Communication",
+   "Subject / Programme": "Professional Communication",
+   "Practical Evidence": "Email, memo and meeting simulation",
+   "Suggested Assessment": "Writing rubric + viva",
+   "Status Before Launch": "Syllabus and mentor approval"
+  },
+  {
+   "Subject Family": "Communication",
+   "Subject / Programme": "Hindi / Maithili Communication",
+   "Practical Evidence": "Translation and community communication task",
+   "Suggested Assessment": "Portfolio + oral assessment",
+   "Status Before Launch": "Language mentor approval"
+  },
+  {
+   "Subject Family": "Civic Awareness",
+   "Subject / Programme": "Swachh Bharat / Community Sanitation Awareness",
+   "Practical Evidence": "Approved cleanliness awareness / field activity log",
+   "Suggested Assessment": "Field report + reflection",
+   "Status Before Launch": "Permission and safety plan"
+  },
+  {
+   "Subject Family": "Civic Awareness",
+   "Subject / Programme": "Environmental Awareness",
+   "Practical Evidence": "Local waste/water observation survey",
+   "Suggested Assessment": "Survey + report",
+   "Status Before Launch": "Syllabus and field permission"
+  },
+  {
+   "Subject Family": "Life Skills",
+   "Subject / Programme": "Personality Development",
+   "Practical Evidence": "Personal development plan",
+   "Suggested Assessment": "Self-assessment + mentor feedback",
+   "Status Before Launch": "Syllabus and mentor approval"
+  },
+  {
+   "Subject Family": "Life Skills",
+   "Subject / Programme": "Teamwork and Problem Solving",
+   "Practical Evidence": "Group case simulation",
+   "Suggested Assessment": "Rubric-based practical",
+   "Status Before Launch": "Syllabus and mentor approval"
+  },
+  {
+   "Subject Family": "Digital Literacy",
+   "Subject / Programme": "Digital Citizenship and Cyber Hygiene",
+   "Practical Evidence": "Safe digital workflow demonstration",
+   "Suggested Assessment": "Practical test",
+   "Status Before Launch": "Syllabus and mentor approval"
+  },
+  {
+   "Subject Family": "Finance",
+   "Subject / Programme": "Financial Literacy and Digital Payments Awareness",
+   "Practical Evidence": "Budget and safe UPI awareness task",
+   "Suggested Assessment": "Scenario quiz + report",
+   "Status Before Launch": "Syllabus and mentor approval"
+  },
+  {
+   "Subject Family": "Community Development",
+   "Subject / Programme": "Community Engagement and Social Responsibility",
+   "Practical Evidence": "Documented community project",
+   "Suggested Assessment": "Project report + viva",
+   "Status Before Launch": "Host and permissions"
+  },
+  {
+   "Subject Family": "Local Enterprise",
+   "Subject / Programme": "Makhana Value Chain Awareness",
+   "Practical Evidence": "Value-chain mapping and market survey",
+   "Suggested Assessment": "Field report",
+   "Status Before Launch": "Host and mentor verification"
+  },
+  {
+   "Subject Family": "Local Enterprise",
+   "Subject / Programme": "Sitamarhi Litchi and Horticulture",
+   "Practical Evidence": "Local horticulture survey",
+   "Suggested Assessment": "Field notes + presentation",
+   "Status Before Launch": "Host and mentor verification"
+  },
+  {
+   "Subject Family": "Heritage",
+   "Subject / Programme": "Mithila Heritage and Madhubani Art",
+   "Practical Evidence": "Heritage documentation / art portfolio",
+   "Suggested Assessment": "Portfolio review",
+   "Status Before Launch": "Rights and mentor review"
+  }
+ ]
+}
