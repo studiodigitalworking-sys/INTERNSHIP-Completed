@@ -1,0 +1,278 @@
+{
+ "docs": [
+  {
+   "id": "01",
+   "title": "Internship Completion Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Formal completion credential, only after verified internship requirements and authorised issuer approval."
+  },
+  {
+   "id": "02",
+   "title": "Internship Participation Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Confirms participation only; show true programme dates and duration. Does not imply completion or academic credit."
+  },
+  {
+   "id": "03",
+   "title": "Training / Learning Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Confirms a named training module and verified learning hours."
+  },
+  {
+   "id": "04",
+   "title": "Attendance Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Confirms recorded attendance for specified dates/sessions; never substitutes for a completion certificate."
+  },
+  {
+   "id": "05",
+   "title": "Internship Experience Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Describes actual role, organisation, dates, tasks and supervisor."
+  },
+  {
+   "id": "06",
+   "title": "Project Completion Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Confirms a project deliverable and review status."
+  },
+  {
+   "id": "07",
+   "title": "Merit / Excellence Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Confirms a defined merit award with rubric, score and award authority."
+  },
+  {
+   "id": "08",
+   "title": "Skill Competency Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Confirms assessed competencies; name the assessment standard and level."
+  },
+  {
+   "id": "09",
+   "title": "Appreciation Certificate",
+   "kind": "CERTIFICATE",
+   "desc": "Recognition of contribution; not an academic completion credential."
+  },
+  {
+   "id": "10",
+   "title": "Special Recognition / Owner Award",
+   "kind": "CERTIFICATE",
+   "desc": "Platform recognition award clearly marked non-credit unless separately authorised."
+  },
+  {
+   "id": "11",
+   "title": "Annexure I - Student Consent Letter",
+   "kind": "FORM",
+   "desc": "Student consent and programme particulars; retain signed copy."
+  },
+  {
+   "id": "12",
+   "title": "Annexure II - Internship Acceptance Letter",
+   "kind": "FORM",
+   "desc": "Host organisation acceptance and assigned supervisor."
+  },
+  {
+   "id": "13",
+   "title": "Annexure III - IPO Completion Certificate",
+   "kind": "FORM",
+   "desc": "Host organisation certifies actual internship work and duration."
+  },
+  {
+   "id": "14",
+   "title": "Annexure IV - Department Certificate",
+   "kind": "FORM",
+   "desc": "Department/college certification by authorised institutional signatory."
+  },
+  {
+   "id": "15",
+   "title": "Annexure V - Internship Report Cover Page",
+   "kind": "FORM",
+   "desc": "Report title page and identity/programme fields."
+  },
+  {
+   "id": "16",
+   "title": "Attendance Register",
+   "kind": "RECORD",
+   "desc": "Daily date-wise time-in/time-out and validated attendance entries."
+  },
+  {
+   "id": "17",
+   "title": "Daily / Weekly Logbook",
+   "kind": "RECORD",
+   "desc": "Activity, learning outcome, actual hours, supervisor initials and evidence."
+  },
+  {
+   "id": "18",
+   "title": "Internship Offer / Allotment Letter",
+   "kind": "LETTER",
+   "desc": "Offer details, scope, dates, host, terms and conditions."
+  },
+  {
+   "id": "19",
+   "title": "Joining / Onboarding Confirmation",
+   "kind": "LETTER",
+   "desc": "Joining date, reporting person, orientation and access checklist."
+  },
+  {
+   "id": "20",
+   "title": "Parent / Guardian Consent",
+   "kind": "FORM",
+   "desc": "Use where required by applicable law, age and institutional policy."
+  },
+  {
+   "id": "21",
+   "title": "Mentor / IPO Supervisor Evaluation",
+   "kind": "ASSESSMENT",
+   "desc": "Competency rubric, comments, evidence and recommendation."
+  },
+  {
+   "id": "22",
+   "title": "Academic Evaluation & Marks Sheet",
+   "kind": "ASSESSMENT",
+   "desc": "Report, viva, internal/external marks and result with policy version."
+  },
+  {
+   "id": "23",
+   "title": "Report Declaration & Originality Statement",
+   "kind": "FORM",
+   "desc": "Student declaration of authorship, references and permitted assistance."
+  },
+  {
+   "id": "24",
+   "title": "Report Index & Evidence Register",
+   "kind": "RECORD",
+   "desc": "Chapter list, artefact links, approvals and evidence custody."
+  },
+  {
+   "id": "25",
+   "title": "NOC / College Permission / Recommendation",
+   "kind": "LETTER",
+   "desc": "Draft only; must be signed by an authorised institutional officer."
+  },
+  {
+   "id": "26",
+   "title": "Extension / Schedule Change Approval",
+   "kind": "LETTER",
+   "desc": "Approved revised dates and effect on planned hours."
+  },
+  {
+   "id": "27",
+   "title": "Withdrawal / Discontinuation Record",
+   "kind": "RECORD",
+   "desc": "Reason, effective date, work completed and disposition."
+  },
+  {
+   "id": "28",
+   "title": "Student / IPO / Faculty Feedback Form",
+   "kind": "FORM",
+   "desc": "Structured feedback for programme improvement."
+  },
+  {
+   "id": "29",
+   "title": "Credential Verification Summary Slip",
+   "kind": "RECORD",
+   "desc": "Minimal public-facing credential record and status."
+  },
+  {
+   "id": "30",
+   "title": "Intern ID Card",
+   "kind": "CARD",
+   "desc": "Identity and cohort card; no unnecessary personal data."
+  },
+  {
+   "id": "31",
+   "title": "Internship Report Master Template",
+   "kind": "REPORT",
+   "desc": "Full editable report structure with chapters, evidence, reflections, references and annexures."
+  },
+  {
+   "id": "32",
+   "title": "Host Organisation Internship MoU / Agreement",
+   "kind": "AGREEMENT",
+   "desc": "Draft collaboration agreement with host organisation; legal review and authorised signatures required."
+  }
+ ],
+ "themes": [
+  {
+   "id": "01",
+   "name": "Mithila Heritage",
+   "primary": "#7B1E2D",
+   "accent": "#C89B3C",
+   "paper": "#FFF8E9",
+   "desc": "Maroon + antique gold + ivory; restrained Mithila border motif; premium regional identity."
+  },
+  {
+   "id": "02",
+   "name": "Academic Navy & Gold",
+   "primary": "#142C4E",
+   "accent": "#C6A456",
+   "paper": "#F7F8FA",
+   "desc": "Formal academic navy, gold rules, symmetric framing."
+  },
+  {
+   "id": "03",
+   "name": "Minimal Ivory",
+   "primary": "#333333",
+   "accent": "#A98A52",
+   "paper": "#FCFAF4",
+   "desc": "Clean whitespace, refined typography and hairline border."
+  },
+  {
+   "id": "04",
+   "name": "Emerald Corporate",
+   "primary": "#145A46",
+   "accent": "#B6A36B",
+   "paper": "#F4F8F5",
+   "desc": "Professional emerald panels and subtle gold accents."
+  },
+  {
+   "id": "05",
+   "name": "Royal Burgundy",
+   "primary": "#5A1835",
+   "accent": "#D4B16A",
+   "paper": "#FFF9F5",
+   "desc": "Deep burgundy, ivory paper, double-line border."
+  },
+  {
+   "id": "06",
+   "name": "Modern Gradient",
+   "primary": "#254B78",
+   "accent": "#55A6A1",
+   "paper": "#F7FAFD",
+   "desc": "Contemporary geometric bands and clear credential hierarchy."
+  },
+  {
+   "id": "07",
+   "name": "Geometric Teal",
+   "primary": "#0C5961",
+   "accent": "#C28D53",
+   "paper": "#F5FBFA",
+   "desc": "Teal geometry and structured information blocks."
+  },
+  {
+   "id": "08",
+   "name": "Research Slate",
+   "primary": "#334155",
+   "accent": "#8FA3B8",
+   "paper": "#F7F9FC",
+   "desc": "Research-institute style, slate/blue-grey, clean data layout."
+  },
+  {
+   "id": "09",
+   "name": "Digital Circuit",
+   "primary": "#14263D",
+   "accent": "#19A6A6",
+   "paper": "#F5F9FC",
+   "desc": "Technology pattern, circuit-style corner lines and secure credential feel."
+  },
+  {
+   "id": "10",
+   "name": "Eco Botanical",
+   "primary": "#25553D",
+   "accent": "#A8B66A",
+   "paper": "#F7FBF2",
+   "desc": "Leaf-inspired line accents, green/cream and sustainability identity."
+  }
+ ]
+}

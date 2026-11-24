@@ -1,0 +1,494 @@
+{
+ "Family Summary": [
+  {
+   "Subject Family": "AI, ML & Generative AI",
+   "Programme Count": "30"
+  },
+  {
+   "Subject Family": "Accounting Finance Banking & Tax",
+   "Programme Count": "30"
+  },
+  {
+   "Subject Family": "Agriculture Agritech & Animal Sciences",
+   "Programme Count": "35"
+  },
+  {
+   "Subject Family": "Animation Video & Photography",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Business Management & Entrepreneurship",
+   "Programme Count": "27"
+  },
+  {
+   "Subject Family": "Civil Architecture & Construction",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Cloud & DevOps",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "College, Campus & Academic Administration",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Commerce Retail & E-Commerce",
+   "Programme Count": "26"
+  },
+  {
+   "Subject Family": "Computer & Digital Literacy",
+   "Programme Count": "24"
+  },
+  {
+   "Subject Family": "Content Journalism & Communication",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Cyber Cafe, CSC & Digital Citizen Services",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Cybersecurity & IT Infrastructure",
+   "Programme Count": "28"
+  },
+  {
+   "Subject Family": "Dairy, Livestock & Rural Animal Enterprise",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Darbhanga Makhana Value Chain",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Data Analytics & BI",
+   "Programme Count": "30"
+  },
+  {
+   "Subject Family": "Digital Marketing & Growth",
+   "Programme Count": "30"
+  },
+  {
+   "Subject Family": "Education & EdTech",
+   "Programme Count": "28"
+  },
+  {
+   "Subject Family": "Education, Coaching & Student Support",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Environment Climate & Sustainability",
+   "Programme Count": "29"
+  },
+  {
+   "Subject Family": "Fashion Textile & Lifestyle",
+   "Programme Count": "19"
+  },
+  {
+   "Subject Family": "Fisheries, Ponds & Aquaculture",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Flood, Water, Climate & Disaster Resilience",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Food Science & Processing",
+   "Programme Count": "18"
+  },
+  {
+   "Subject Family": "Government Schemes & Citizen Services",
+   "Programme Count": "18"
+  },
+  {
+   "Subject Family": "Healthcare & Public Health",
+   "Programme Count": "28"
+  },
+  {
+   "Subject Family": "Human Resources & Recruitment",
+   "Programme Count": "24"
+  },
+  {
+   "Subject Family": "Interdisciplinary & New Economy",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Law Governance & Public Policy",
+   "Programme Count": "28"
+  },
+  {
+   "Subject Family": "Life Sciences & Biotechnology",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Local Government, Panchayat & Public Service Delivery",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Local Healthcare Administration & Public Health",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Local Media, Journalism & Community Communication",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Local Retail, MSME & Small Business Operations",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Local Solar, Energy & Green Enterprise",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Logistics Supply Chain & Transport",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Madhubani / Mithila Art & Creative Enterprise",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Maithili Language, Literature & Translation",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Mechanical Electrical Electronics & Automotive",
+   "Programme Count": "30"
+  },
+  {
+   "Subject Family": "Mithila Culture, Heritage & Local History",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Mobile & App Development",
+   "Programme Count": "20"
+  },
+  {
+   "Subject Family": "NGO Community Development & Social Impact",
+   "Programme Count": "26"
+  },
+  {
+   "Subject Family": "North Bihar Agriculture & Farmer Services",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Physics Chemistry Mathematics",
+   "Programme Count": "28"
+  },
+  {
+   "Subject Family": "Professional Skills & Employability",
+   "Programme Count": "23"
+  },
+  {
+   "Subject Family": "Research & Scientific Documentation",
+   "Programme Count": "27"
+  },
+  {
+   "Subject Family": "Robotics IoT & Emerging Tech",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Rural Development, SHG & JEEViKA Enterprise",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Sitamarhi Litchi, Horticulture & Food Processing",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "Software Engineering & Programming",
+   "Programme Count": "28"
+  },
+  {
+   "Subject Family": "Software Testing & Product",
+   "Programme Count": "26"
+  },
+  {
+   "Subject Family": "Tourism Hospitality Sports & Events",
+   "Programme Count": "25"
+  },
+  {
+   "Subject Family": "Tourism, Pilgrimage & Local Hospitality",
+   "Programme Count": "15"
+  },
+  {
+   "Subject Family": "UI UX & Graphic Design",
+   "Programme Count": "26"
+  },
+  {
+   "Subject Family": "Web Development",
+   "Programme Count": "25"
+  }
+ ],
+ "LNMU Degree Mapping": [
+  {
+   "Degree / Subject Group": "BA – Political Science",
+   "Recommended Internship Pathways": "Public policy, governance, Panchayati Raj, public administration, scheme research, policy writing, citizen services and NGO programme support."
+  },
+  {
+   "Degree / Subject Group": "BA – Sociology",
+   "Recommended Internship Pathways": "Community surveys, SHG/JEEViKA, rural livelihoods, social impact, NGO operations, population studies, inclusion and field research."
+  },
+  {
+   "Degree / Subject Group": "BA – Economics",
+   "Recommended Internship Pathways": "Local market research, agriculture economics, price surveys, MSME, banking/financial literacy, rural development and data analysis."
+  },
+  {
+   "Degree / Subject Group": "BA – Geography",
+   "Recommended Internship Pathways": "GIS/QGIS, flood mapping, water resources, climate adaptation, tourism mapping, land-use and village resource surveys."
+  },
+  {
+   "Degree / Subject Group": "BA – History / AIH",
+   "Recommended Internship Pathways": "Mithila heritage, Darbhanga Raj, archives, oral history, museum support, cultural tourism and historical research."
+  },
+  {
+   "Degree / Subject Group": "BA – Maithili / Hindi / English / Urdu / Sanskrit",
+   "Recommended Internship Pathways": "Translation, regional content, editing, educational content, digital publishing, journalism, subtitling and language technology."
+  },
+  {
+   "Degree / Subject Group": "BA – Psychology",
+   "Recommended Internship Pathways": "Non-clinical wellbeing awareness, supervised research, organisational psychology, education support and behaviour research; no independent diagnosis/counselling."
+  },
+  {
+   "Degree / Subject Group": "BA – Education",
+   "Recommended Internship Pathways": "Teaching assistantship, lesson plans, assessment resources, digital literacy, inclusive learning material and school administration."
+  },
+  {
+   "Degree / Subject Group": "BCom",
+   "Recommended Internship Pathways": "Tally/accounting, GST concepts, bookkeeping, banking, financial literacy, tax documentation under supervision, audit support, e-commerce and business analytics."
+  },
+  {
+   "Degree / Subject Group": "BBA / Management",
+   "Recommended Internship Pathways": "Marketing, HR, sales, operations, startup, entrepreneurship, retail, logistics, customer experience and product/project coordination."
+  },
+  {
+   "Degree / Subject Group": "BSc – Mathematics / Statistics",
+   "Recommended Internship Pathways": "Statistics, Excel/Python analytics, survey analysis, modelling, financial mathematics and research data."
+  },
+  {
+   "Degree / Subject Group": "BSc – Physics",
+   "Recommended Internship Pathways": "Solar energy, instrumentation, electronics, IoT, scientific computing, energy measurement and lab documentation."
+  },
+  {
+   "Degree / Subject Group": "BSc – Chemistry",
+   "Recommended Internship Pathways": "Water quality, green chemistry, food quality testing under supervision, batteries, materials, lab safety and scientific reporting."
+  },
+  {
+   "Degree / Subject Group": "BSc – Botany",
+   "Recommended Internship Pathways": "Crop science, soil/plant observation, horticulture, litchi, makhana ecology, biodiversity and supervised plant tissue culture."
+  },
+  {
+   "Degree / Subject Group": "BSc – Zoology",
+   "Recommended Internship Pathways": "Fisheries, pond ecology, biodiversity, animal science, non-clinical public health research and supervised lab support."
+  },
+  {
+   "Degree / Subject Group": "BCA / Computer Science",
+   "Recommended Internship Pathways": "Web/app development, programming, database, AI, data, cyber hygiene, IT support, QA, cloud fundamentals and local language technology."
+  },
+  {
+   "Degree / Subject Group": "Fine Arts / Visual Arts",
+   "Recommended Internship Pathways": "Madhubani art documentation, graphic design, visual communication, product photography, artisan e-commerce and exhibition coordination."
+  },
+  {
+   "Degree / Subject Group": "Vocational / Diploma / Skill programmes",
+   "Recommended Internship Pathways": "Office automation, digital services, solar operations, retail, hospitality, CAD, data entry, logistics and supervised technical support."
+  }
+ ],
+ "LNMU Internship Rules": [
+  {
+   "Rule Area": "University scope",
+   "Published LNMU Guideline / Operational Requirement": "LNMU Undergraduate Internship Guidelines cover UG programmes in constituent and affiliated colleges, including BA/BSc/BCom and vocational/professional/self-financed programmes."
+  },
+  {
+   "Rule Area": "Credit and semester",
+   "Published LNMU Guideline / Operational Requirement": "For BA, BSc and BCom, the published guideline specifies 4 credits in Semester V; ordinarily during summer break between Semester IV and V."
+  },
+  {
+   "Rule Area": "Total hours",
+   "Published LNMU Guideline / Operational Requirement": "120 hours total (30 hours per credit); minimum 90 hours with the Internship Providing Organisation (IPO); remaining time for report preparation, assessment and evaluation."
+  },
+  {
+   "Rule Area": "Individual work",
+   "Published LNMU Guideline / Operational Requirement": "Each student completes the internship individually; group internships are not permitted."
+  },
+  {
+   "Rule Area": "Mode",
+   "Published LNMU Guideline / Operational Requirement": "Physical/on-site is the default. Online/virtual may be completed through government organisations/platforms such as SWAYAM Plus or another government-institution platform, depending on work and with college approval."
+  },
+  {
+   "Rule Area": "Host types",
+   "Published LNMU Guideline / Operational Requirement": "Government departments, registered NGOs/societies, firms, industries, research labs, HEIs, local industries/businesses, health sectors, panchayats/municipalities, media organisations and other registered institutions."
+  },
+  {
+   "Rule Area": "Academic relevance",
+   "Published LNMU Guideline / Operational Requirement": "Internship should relate to the student's area of study or interest and help develop new skills."
+  },
+  {
+   "Rule Area": "Evaluation",
+   "Published LNMU Guideline / Operational Requirement": "Internship Report 70%; Presentation/Viva-Voce 30%; minimum 45% in each component."
+  },
+  {
+   "Rule Area": "Submission",
+   "Published LNMU Guideline / Operational Requirement": "IPO completion certificate within 10 days of completion; report to department within 20 days; marks/award roll within 7 days after evaluation/viva."
+  },
+  {
+   "Rule Area": "Documents",
+   "Published LNMU Guideline / Operational Requirement": "Consent letter, acceptance letter, IPO completion certificate, departmental certificate and internship report are part of prescribed annexures."
+  },
+  {
+   "Rule Area": "Validity",
+   "Published LNMU Guideline / Operational Requirement": "LNMU's implementation circular states that mere submission of certificates without actual work engagement with a recognised organisation under proper supervision will not be treated as valid."
+  },
+  {
+   "Rule Area": "Prohibited placements",
+   "Published LNMU Guideline / Operational Requirement": "The April circular excludes unethical/prohibited activities, network-level marketing using personal contacts/social media, alcohol/smoking promotion, religious sect/personality promotion, gambling/illegal activities, and political party/election campaign promotion."
+  }
+ ],
+ "Regional Priority Map": [
+  {
+   "Area": "Darbhanga",
+   "Relevant Local Sector Clusters": "Makhana value chain, fisheries/ponds, Madhubani/Mithila art and heritage, dairy, agriculture, local trade and tourism."
+  },
+  {
+   "Area": "Sitamarhi / Pupri",
+   "Relevant Local Sector Clusters": "Litchi and horticulture, agriculture, dairy/livestock, fisheries, rural retail/MSMEs, citizen service delivery, education and local tourism."
+  },
+  {
+   "Area": "Madhubani",
+   "Relevant Local Sector Clusters": "Mithila painting, makhana, Maithili literature, handicrafts, tourism, rural enterprise and agriculture."
+  },
+  {
+   "Area": "Samastipur",
+   "Relevant Local Sector Clusters": "Agriculture, dairy/cooperative operations, food processing, education, retail and agri supply chains."
+  },
+  {
+   "Area": "North Bihar cross-district",
+   "Relevant Local Sector Clusters": "Flood resilience, water resources, public health awareness, rural livelihoods, SHG enterprises, digital inclusion, local governance and youth skills."
+  }
+ ],
+ "Sources & Evidence": [
+  {
+   "Source": "LNMU Internship Guidelines and implementation instructions (2026)",
+   "What it supports / limitation": "University rules for credits, hours, mode, actual work, evaluation and documentation.",
+   "URL": "https://mlsmcollege.ac.in/wp-content/uploads/2026/04/combinepdf.pdf"
+  },
+  {
+   "Source": "UGC Internship/Research Internship Guidelines (2023)",
+   "What it supports / limitation": "Indicative sectors, experiential learning, host types, research and employability framework.",
+   "URL": "https://www.ugc.gov.in/pdfnews/2051511_Internship-Research-Internship-Guidelines.pdf"
+  },
+  {
+   "Source": "EduIntern FAQ",
+   "What it supports / limitation": "Provider-published areas: healthcare, financial literacy, digital literacy, skill/personality development, community development, politics/governance, entrepreneurship.",
+   "URL": "https://www.eduintern.in/faq"
+  },
+  {
+   "Source": "EduIntern public home page",
+   "What it supports / limitation": "Technology/digital, social sciences, professional skills, environment/development, agriculture, tourism and disaster management.",
+   "URL": "https://www.eduintern.in/"
+  },
+  {
+   "Source": "EzyIntern non-technical brochure",
+   "What it supports / limitation": "Management/arts/social science, data/research, commerce/finance and IT/computer applications; includes digital marketing, HR, NGO, policy, accounting/GST, banking, CRM, supply chain, programming, AI/ML, cybersecurity, cloud and research.",
+   "URL": "https://www.scribd.com/document/1005911407/Ezyintern-Non-technical-Brochure-20260211-225311-0000"
+  },
+  {
+   "Source": "EzyIntern official site",
+   "What it supports / limitation": "Provider-stated UG tracks, training, online learning and certificate verification; claims are provider claims.",
+   "URL": "https://www.ezyintern.in/"
+  },
+  {
+   "Source": "Internship Junction domains",
+   "What it supports / limitation": "IT, marketing/media, finance/commerce, HR, design, engineering/technology, business/management, healthcare/life sciences.",
+   "URL": "https://www.internshipjunction.in/discovery/internship-domains/"
+  },
+  {
+   "Source": "Internship Junction Science",
+   "What it supports / limitation": "AutoCAD, data analysis, IoT/AI, scientific writing, solar, electronics/PCB, physics, chemistry, water testing, batteries, statistics, zoology and botany.",
+   "URL": "https://www.internshipjunction.in/department/science-ug-pg/program-activities/"
+  },
+  {
+   "Source": "Internship Junction Commerce",
+   "What it supports / limitation": "Tally/GST, e-invoicing, digital marketing, e-commerce, office management, financial literacy, banking, startup, business analytics and taxation.",
+   "URL": "https://www.internshipjunction.in/department/commerce-ug-pg/program-activities/"
+  },
+  {
+   "Source": "Internship Junction Arts/Humanities",
+   "What it supports / limitation": "Graphic design, video editing, digital marketing, office automation, photography, writing, public policy, psychology, GIS, heritage, history, language and translation.",
+   "URL": "https://www.internshipjunction.in/department/arts-and-humanities-ug-pg/about-arts-and-humanities-ug-pg/"
+  },
+  {
+   "Source": "NITI Aayog Internship Guidelines",
+   "What it supports / limitation": "Agriculture, data, economics, education, energy, commerce, governance, health, industry, infrastructure, media, environment, rural development, science, skills, tourism and water resources.",
+   "URL": "https://www.niti.gov.in/sites/default/files/2023-01/NITI_Internship_Guidelines_17012023_1.pdf"
+  },
+  {
+   "Source": "Darbhanga Division overview",
+   "What it supports / limitation": "Mithila culture, mango, makhana, fish, Madhubani painting, dairy and agriculture.",
+   "URL": "https://darbhangadivision.bih.nic.in/about-department/introduction/"
+  },
+  {
+   "Source": "Darbhanga District economy",
+   "What it supports / limitation": "Agriculture and trade in fish, mango and makhana.",
+   "URL": "https://darbhanga.nic.in/economy/"
+  },
+  {
+   "Source": "MoFPI ODOP list",
+   "What it supports / limitation": "Darbhanga—Makhana; Sitamarhi—Litchi.",
+   "URL": "https://www.mofpi.gov.in/sites/default/files/final_revised_odop_list_of_713_districts_with_om.pdf"
+  },
+  {
+   "Source": "PIB National Makhana Board update (2026)",
+   "What it supports / limitation": "Darbhanga research centre and Darbhanga/Sitamarhi as major producing districts.",
+   "URL": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2298038&lang=2&reg=48"
+  },
+  {
+   "Source": "Bihar District Agriculture Profile – Sitamarhi",
+   "What it supports / limitation": "Crop, horticulture, livestock and fisheries indicators for local pathway design.",
+   "URL": "https://basa.co.in/wp-content/uploads/2025/07/District-Agri-Profile.pdf"
+  }
+ ],
+ "Programme Delivery Blueprint": [
+  {
+   "Stage": "Discover",
+   "Minimum platform / internship requirements": "Filter by university, college, degree, major, semester, district, interests, eligibility, mode and host type."
+  },
+  {
+   "Stage": "Apply",
+   "Minimum platform / internship requirements": "Student profile, consent, academic fit check, documents, preferred host and accessibility needs."
+  },
+  {
+   "Stage": "Approval",
+   "Minimum platform / internship requirements": "College/department approval where required; consent and acceptance letters; verified IPO and named supervisor."
+  },
+  {
+   "Stage": "Orient",
+   "Minimum platform / internship requirements": "Learning outcomes, workplace conduct, safety, data privacy, attendance, tasks and reporting rules."
+  },
+  {
+   "Stage": "Learn",
+   "Minimum platform / internship requirements": "Structured modules, readings, quizzes and tool practice; training supplements actual work and does not replace it."
+  },
+  {
+   "Stage": "Work",
+   "Minimum platform / internship requirements": "Supervised individual tasks at approved organisation; record actual dates and hours."
+  },
+  {
+   "Stage": "Evidence",
+   "Minimum platform / internship requirements": "Daily logbook, weekly reflection, task submissions, supervisor review, project/report and proof of work."
+  },
+  {
+   "Stage": "Evaluate",
+   "Minimum platform / internship requirements": "Supervisor feedback, report review, viva/presentation, rubric and originality check."
+  },
+  {
+   "Stage": "Complete",
+   "Minimum platform / internship requirements": "IPO completion certificate, departmental certificate and report submission in prescribed sequence."
+  },
+  {
+   "Stage": "Verify",
+   "Minimum platform / internship requirements": "Public verification page with issuer, ID, dates, programme, status and privacy-safe validation."
+  }
+ ]
+}

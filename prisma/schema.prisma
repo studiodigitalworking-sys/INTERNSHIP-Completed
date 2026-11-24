@@ -1,0 +1,708 @@
+// InternVerse data model.
+// Dev/demo uses SQLite; production should use PostgreSQL (change provider + DATABASE_URL, see docs/DATABASE.md).
+// Status/role columns are strings validated in application code (src/lib/constants.ts) so the schema runs on both engines.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Institution {
+  id                 String   @id @default(uuid())
+  name               String
+  code               String   @unique
+  university         String?
+  district           String?
+  verificationStatus String   @default("UNVERIFIED") // UNVERIFIED | PENDING | VERIFIED | REJECTED | SUSPENDED
+  evidenceRef        String?
+  createdAt          DateTime @default(now())
+  users              User[]
+}
+
+model User {
+  id             String    @id @default(uuid())
+  email          String    @unique
+  phone          String?
+  name           String
+  passwordHash   String
+  role           String    @default("STUDENT")
+  status         String    @default("ACTIVE") // ACTIVE | SUSPENDED | PENDING_VERIFICATION | ARCHIVED
+  preferredLang  String    @default("en")
+  institutionId  String?
+  institution    Institution? @relation(fields: [institutionId], references: [id])
+  failedLogins   Int       @default(0)
+  lockedUntil    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  profile        StudentProfile?
+  sessions       Session[]
+  resets         PasswordReset[]
+  consents       Consent[]
+  applications   Application[]  @relation("StudentApplications")
+  reviewedApps   Application[]  @relation("AppReviewer")
+  enrollments    Enrollment[]
+  orders         Order[]
+  watch          WatchProgress[]
+  attendance     LiveAttendance[]
+  questionsAsked LiveQuestion[]
+  attempts       ExamAttempt[]
+  submissions    Submission[]   @relation("SubmissionAuthor")
+  reviewedSubs   Submission[]   @relation("SubmissionReviewer")
+  workLogs       WorkLog[]      @relation("WorkLogAuthor")
+  reviewedLogs   WorkLog[]      @relation("WorkLogReviewer")
+  credentials    Credential[]   @relation("CredentialRecipient")
+  notifications  Notification[]
+  tickets        SupportTicket[] @relation("TicketOwner")
+  assignedTickets SupportTicket[] @relation("TicketAssignee")
+  jobApps        JobApplication[]
+  mentoredCohorts Cohort[]      @relation("CohortMentor")
+  hostedLive     LiveSession[]  @relation("LiveMentor")
+}
+
+model StudentProfile {
+  userId      String  @id
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university  String?
+  college     String?
+  department  String?
+  degree      String?
+  semester    String?
+  session     String?
+  rollNo      String?
+  district    String?
+  skills      String?
+  interests   String?
+  bio         String?
+  resumeUrl   String?
+  portfolioUrl String?
+  isMinor     Boolean @default(false)
+  guardianName String?
+  accessibilityNeeds String?
+}
+
+model Session {
+  id        String    @id @default(uuid())
+  tokenHash String    @unique
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+  expiresAt DateTime
+  revokedAt DateTime?
+  userAgent String?
+}
+
+model PasswordReset {
+  id        String    @id @default(uuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model Consent {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        String    // TERMS | PRIVACY | COMMUNICATION | GUARDIAN
+  version     String
+  grantedAt   DateTime  @default(now())
+  withdrawnAt DateTime?
+}
+
+model RateLimit {
+  key         String   @id
+  count       Int
+  windowStart DateTime
+}
+
+model SubjectFamily {
+  id         String      @id @default(uuid())
+  name       String      @unique
+  programmes Programme[]
+}
+
+model Programme {
+  id                   String   @id @default(uuid())
+  code                 String   @unique
+  title                String
+  titleHi              String?
+  familyId             String
+  family               SubjectFamily @relation(fields: [familyId], references: [id])
+  sourceStatus         String
+  streams              String
+  evidence             String
+  mode                 String
+  launchNote           String
+  description          String?
+  outcomes             String?  // newline separated
+  publicationStatus    String   @default("DRAFT") // DRAFT | REVIEW | PUBLISHED | PAUSED | ARCHIVED
+  academicCreditStatus String   @default("NOT_CONFIRMED") // NOT_CONFIRMED | INSTITUTION_REVIEW | APPROVED | NOT_APPLICABLE
+  durationHours        Int      @default(120)
+  feePaise             Int      @default(30000)
+  isRegional           Boolean  @default(false)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  cohorts              Cohort[]
+  applications         Application[]
+  courses              Course[]
+  exams                Exam[]
+}
+
+model Cohort {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  programmeId String
+  programme   Programme @relation(fields: [programmeId], references: [id])
+  startDate   DateTime
+  endDate     DateTime
+  mode        String   @default("HYBRID") // ONLINE | OFFLINE | HYBRID | FIELD
+  status      String   @default("OPEN")   // DRAFT | OPEN | RUNNING | CLOSED
+  seats       Int      @default(100)
+  mentorId    String?
+  mentor      User?    @relation("CohortMentor", fields: [mentorId], references: [id])
+  hostName    String?
+  createdAt   DateTime @default(now())
+  enrollments Enrollment[]
+  liveSessions LiveSession[]
+  assignments Assignment[]
+  applications Application[]
+}
+
+model Application {
+  id                 String    @id @default(uuid())
+  studentId          String
+  student            User      @relation("StudentApplications", fields: [studentId], references: [id])
+  programmeId        String
+  programme          Programme @relation(fields: [programmeId], references: [id])
+  cohortId           String?
+  cohort             Cohort?   @relation(fields: [cohortId], references: [id])
+  status             String    @default("SUBMITTED") // SUBMITTED | UNDER_REVIEW | APPROVED | REJECTED | WITHDRAWN
+  statement          String?
+  preferredHost      String?
+  consentGiven       Boolean   @default(false)
+  eligibilitySnapshot String?
+  reviewNote         String?
+  reviewedById       String?
+  reviewedBy         User?     @relation("AppReviewer", fields: [reviewedById], references: [id])
+  createdAt          DateTime  @default(now())
+  decidedAt          DateTime?
+  enrollment         Enrollment?
+
+  @@unique([studentId, programmeId])
+}
+
+model Enrollment {
+  id            String    @id @default(uuid())
+  studentId     String
+  student       User      @relation(fields: [studentId], references: [id])
+  cohortId      String
+  cohort        Cohort    @relation(fields: [cohortId], references: [id])
+  applicationId String?   @unique
+  application   Application? @relation(fields: [applicationId], references: [id])
+  status        String    @default("PENDING_PAYMENT") // PENDING_PAYMENT | ACTIVE | COMPLETED | WITHDRAWN | SUSPENDED
+  enrolledAt    DateTime  @default(now())
+  activatedAt   DateTime?
+  completedAt   DateTime?
+  orders        Order[]
+  workLogs      WorkLog[]
+
+  @@unique([studentId, cohortId])
+}
+
+model Order {
+  id              String    @id @default(uuid())
+  enrollmentId    String
+  enrollment      Enrollment @relation(fields: [enrollmentId], references: [id])
+  studentId       String
+  student         User      @relation(fields: [studentId], references: [id])
+  amountPaise     Int
+  currency        String    @default("INR")
+  status          String    @default("CREATED") // CREATED | PAID | FAILED | REFUNDED | PARTIALLY_REFUNDED
+  provider        String    // SANDBOX | RAZORPAY
+  providerOrderId String    @unique
+  receiptNo       String?   @unique
+  idempotencyKey  String    @unique
+  createdAt       DateTime  @default(now())
+  paidAt          DateTime?
+  payments        Payment[]
+}
+
+model Payment {
+  id                String   @id @default(uuid())
+  orderId           String
+  order             Order    @relation(fields: [orderId], references: [id])
+  providerPaymentId String   @unique
+  status            String   // CAPTURED | FAILED | REFUNDED
+  amountPaise       Int
+  method            String?
+  source            String   // WEBHOOK | CALLBACK | RECONCILIATION
+  createdAt         DateTime @default(now())
+  refunds           Refund[]
+}
+
+model Refund {
+  id               String   @id @default(uuid())
+  paymentId        String
+  payment          Payment  @relation(fields: [paymentId], references: [id])
+  amountPaise      Int
+  reason           String
+  status           String   @default("PROCESSED")
+  providerRefundId String?  @unique
+  createdById      String
+  createdAt        DateTime @default(now())
+}
+
+model WebhookEvent {
+  id             String   @id @default(uuid())
+  provider       String
+  eventId        String   @unique
+  type           String
+  payload        String
+  signatureValid Boolean
+  result         String?
+  createdAt      DateTime @default(now())
+}
+
+model Course {
+  id          String   @id @default(uuid())
+  programmeId String
+  programme   Programme @relation(fields: [programmeId], references: [id])
+  title       String
+  titleHi     String?
+  description String?
+  order       Int      @default(0)
+  modules     Module[]
+}
+
+model Module {
+  id       String   @id @default(uuid())
+  courseId String
+  course   Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title    String
+  order    Int      @default(0)
+  lessons  Lesson[]
+}
+
+model Lesson {
+  id            String   @id @default(uuid())
+  moduleId      String
+  module        Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  title         String
+  titleHi       String?
+  videoProvider String   @default("YOUTUBE")
+  videoId       String
+  durationSec   Int
+  order         Int      @default(0)
+  body          String?
+  resourceUrl   String?
+  progress      WatchProgress[]
+}
+
+model WatchProgress {
+  id              String   @id @default(uuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId        String
+  lesson          Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  buckets         String   @default("") // one char per 10-second bucket: '0' unseen, '1' credited
+  uniqueSeconds   Int      @default(0)
+  lastPosition    Int      @default(0)
+  lastHeartbeatAt DateTime?
+  heartbeats      Int      @default(0)
+  rejected        Int      @default(0)
+  completed       Boolean  @default(false)
+  updatedAt       DateTime @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+model LiveSession {
+  id          String   @id @default(uuid())
+  cohortId    String
+  cohort      Cohort   @relation(fields: [cohortId], references: [id])
+  title       String
+  titleHi     String?
+  youtubeId   String
+  startsAt    DateTime
+  endsAt      DateTime
+  mentorId    String?
+  mentor      User?    @relation("LiveMentor", fields: [mentorId], references: [id])
+  status      String   @default("SCHEDULED") // SCHEDULED | LIVE | ENDED | CANCELLED
+  recordingLessonId String?
+  createdAt   DateTime @default(now())
+  attendance  LiveAttendance[]
+  questions   LiveQuestion[]
+}
+
+model LiveAttendance {
+  id              String    @id @default(uuid())
+  sessionId       String
+  session         LiveSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  firstJoinAt     DateTime  @default(now())
+  lastSeenAt      DateTime  @default(now())
+  creditedSeconds Int       @default(0)
+  reconnects      Int       @default(0)
+  status          String    @default("ABSENT") // PRESENT | PARTIAL | ABSENT
+  adjustedSeconds Int?
+  adjustmentReason String?
+  adjustedById    String?
+
+  @@unique([sessionId, userId])
+}
+
+model LiveQuestion {
+  id        String   @id @default(uuid())
+  sessionId String
+  session   LiveSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  text      String
+  status    String   @default("PENDING") // PENDING | APPROVED | ANSWERED | REJECTED
+  answer    String?
+  createdAt DateTime @default(now())
+}
+
+model Exam {
+  id          String    @id @default(uuid())
+  programmeId String
+  programme   Programme @relation(fields: [programmeId], references: [id])
+  title       String
+  kind        String    @default("QUIZ") // QUIZ | MID | FINAL
+  durationMin Int       @default(20)
+  passPercent Int       @default(40)
+  maxAttempts Int       @default(1)
+  opensAt     DateTime?
+  closesAt    DateTime?
+  published   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  questions   Question[]
+  attempts    ExamAttempt[]
+}
+
+model Question {
+  id              String @id @default(uuid())
+  examId          String
+  exam            Exam   @relation(fields: [examId], references: [id], onDelete: Cascade)
+  text            String
+  options         String // JSON [{id,text}]
+  correctOptionId String
+  marks           Int    @default(1)
+  order           Int    @default(0)
+}
+
+model ExamAttempt {
+  id          String    @id @default(uuid())
+  examId      String
+  exam        Exam      @relation(fields: [examId], references: [id])
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  attemptNo   Int       @default(1)
+  seed        String
+  startedAt   DateTime  @default(now())
+  deadlineAt  DateTime
+  submittedAt DateTime?
+  status      String    @default("IN_PROGRESS") // IN_PROGRESS | SUBMITTED | EXPIRED
+  answers     String    @default("{}")
+  score       Int?
+  maxScore    Int?
+  percent     Int?
+  passed      Boolean?
+  telemetry   String    @default("{}")
+  saveCount   Int       @default(0)
+
+  @@unique([examId, userId, attemptNo])
+}
+
+model Assignment {
+  id          String   @id @default(uuid())
+  cohortId    String
+  cohort      Cohort   @relation(fields: [cohortId], references: [id])
+  title       String
+  description String
+  dueAt       DateTime
+  maxMarks    Int      @default(100)
+  rubric      String?
+  createdAt   DateTime @default(now())
+  submissions Submission[]
+}
+
+model Submission {
+  id           String    @id @default(uuid())
+  assignmentId String
+  assignment   Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  userId       String
+  user         User      @relation("SubmissionAuthor", fields: [userId], references: [id])
+  version      Int       @default(1)
+  content      String
+  linkUrl      String?
+  status       String    @default("SUBMITTED") // SUBMITTED | REVIEWED | RESUBMIT
+  marks        Int?
+  feedback     String?
+  reviewedById String?
+  reviewedBy   User?     @relation("SubmissionReviewer", fields: [reviewedById], references: [id])
+  reviewedAt   DateTime?
+  createdAt    DateTime  @default(now())
+
+  @@unique([assignmentId, userId, version])
+}
+
+model WorkLog {
+  id           String    @id @default(uuid())
+  userId       String
+  user         User      @relation("WorkLogAuthor", fields: [userId], references: [id])
+  enrollmentId String
+  enrollment   Enrollment @relation(fields: [enrollmentId], references: [id])
+  date         DateTime
+  minutes      Int
+  category     String    // TRAINING | HOST | FIELD | PROJECT | SELF_STUDY | REPORT
+  tasks        String
+  learning     String?
+  evidenceUrl  String?
+  status       String    @default("PENDING") // PENDING | APPROVED | REJECTED
+  reviewerId   String?
+  reviewer     User?     @relation("WorkLogReviewer", fields: [reviewerId], references: [id])
+  reviewNote   String?
+  createdAt    DateTime  @default(now())
+}
+
+model Signatory {
+  id        String   @id @default(uuid())
+  name      String
+  title     String
+  active    Boolean  @default(true)
+  authorityEvidence String?
+  createdAt DateTime @default(now())
+}
+
+model Credential {
+  id             String    @id @default(uuid())
+  code           String    @unique // human readable IV-YYYY-XXXXXXXXXX
+  token          String    @unique // 128-bit opaque verification token
+  userId         String?
+  user           User?     @relation("CredentialRecipient", fields: [userId], references: [id])
+  recipientName  String
+  docType        String    // 01..32
+  theme          String    @default("02")
+  title          String
+  programmeTitle String?
+  programmeCode  String?
+  cohortCode     String?
+  hostName       String?
+  verifiedHours  Int?
+  startDate      DateTime?
+  endDate        DateTime?
+  fields         String    @default("{}")
+  status         String    @default("ISSUED") // DRAFT | APPROVAL_PENDING | ISSUED | CORRECTED | SUPERSEDED | REVOKED
+  version        Int       @default(1)
+  supersedesId   String?   @unique
+  supersedes     Credential? @relation("Supersession", fields: [supersedesId], references: [id])
+  supersededBy   Credential? @relation("Supersession")
+  issuerName     String
+  signatoryName  String?
+  signatoryTitle String?
+  isException    Boolean   @default(false)
+  exceptionReason String?
+  evidenceRef    String?
+  payloadHash    String
+  issuedAt       DateTime?
+  createdById    String
+  approvedById   String?
+  revokedReason  String?
+  idempotencyKey String?   @unique
+  createdAt      DateTime  @default(now())
+  events         CredentialEvent[]
+}
+
+model CredentialEvent {
+  id           String   @id @default(uuid())
+  credentialId String
+  credential   Credential @relation(fields: [credentialId], references: [id])
+  action       String
+  actorId      String?
+  reason       String?
+  createdAt    DateTime @default(now())
+}
+
+model VerificationEvent {
+  id        String   @id @default(uuid())
+  lookup    String
+  result    String
+  createdAt DateTime @default(now())
+}
+
+model ExceptionRequest {
+  id            String    @id @default(uuid())
+  type          String    // see EXCEPTION_TYPES
+  studentId     String?
+  targetType    String
+  targetId      String?
+  reason        String
+  evidenceRef   String?
+  payload       String    @default("{}")
+  status        String    @default("REQUESTED") // REQUESTED | UNDER_REVIEW | APPROVED | REJECTED | APPLIED | CANCELLED
+  requestedById String
+  decidedById   String?
+  decisionNote  String?
+  createdAt     DateTime  @default(now())
+  decidedAt     DateTime?
+}
+
+model AuditEvent {
+  id          String   @id @default(uuid())
+  actorId     String?
+  actorRole   String?
+  action      String
+  targetType  String
+  targetId    String?
+  studentId   String?
+  oldValue    String?
+  newValue    String?
+  reason      String?
+  evidenceRef String?
+  approvalId  String?
+  requestId   String?
+  result      String   @default("SUCCESS")
+  createdAt   DateTime @default(now())
+
+  @@index([targetType, targetId])
+  @@index([studentId])
+}
+
+model Notification {
+  id        String    @id @default(uuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  body      String
+  link      String?
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model OutboxMessage {
+  id             String    @id @default(uuid())
+  channel        String    // EMAIL | SMS | WHATSAPP
+  to             String
+  subject        String?
+  body           String
+  priority       Int       @default(1) // 0 auth/payment, 1 critical notice, 2 bulk
+  status         String    @default("PENDING") // PENDING | SENT | FAILED | DEAD
+  attempts       Int       @default(0)
+  nextAttemptAt  DateTime  @default(now())
+  lastError      String?
+  idempotencyKey String    @unique
+  createdAt      DateTime  @default(now())
+  sentAt         DateTime?
+}
+
+model SupportTicket {
+  id           String    @id @default(uuid())
+  userId       String?
+  user         User?     @relation("TicketOwner", fields: [userId], references: [id])
+  name         String
+  email        String
+  category     String    // GENERAL | PAYMENT | CERTIFICATE | TECHNICAL | ACADEMIC | GRIEVANCE | CONTACT | PRIVACY
+  subject      String
+  status       String    @default("OPEN") // OPEN | IN_PROGRESS | RESOLVED | CLOSED
+  priority     String    @default("NORMAL")
+  assignedToId String?
+  assignedTo   User?     @relation("TicketAssignee", fields: [assignedToId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  messages     TicketMessage[]
+}
+
+model TicketMessage {
+  id        String   @id @default(uuid())
+  ticketId  String
+  ticket    SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  authorId  String?
+  authorName String
+  body      String
+  internal  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Employer {
+  id        String   @id @default(uuid())
+  name      String
+  website   String?
+  verified  Boolean  @default(false)
+  contact   String?
+  createdAt DateTime @default(now())
+  jobs      Job[]
+}
+
+model Job {
+  id          String   @id @default(uuid())
+  employerId  String
+  employer    Employer @relation(fields: [employerId], references: [id])
+  title       String
+  location    String
+  mode        String
+  stipend     String?
+  description String
+  skills      String?
+  status      String   @default("OPEN") // OPEN | CLOSED
+  closesAt    DateTime?
+  createdAt   DateTime @default(now())
+  applications JobApplication[]
+}
+
+model JobApplication {
+  id        String   @id @default(uuid())
+  jobId     String
+  job       Job      @relation(fields: [jobId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  coverNote String?
+  status    String   @default("APPLIED") // APPLIED | SHORTLISTED | INTERVIEW | OFFERED | REJECTED | HIRED
+  createdAt DateTime @default(now())
+
+  @@unique([jobId, userId])
+}
+
+model Announcement {
+  id        String   @id @default(uuid())
+  title     String
+  titleHi   String?
+  body      String
+  audience  String   @default("ALL") // ALL | STUDENTS | MENTORS | PUBLIC
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model AiRecommendation {
+  id          String    @id @default(uuid())
+  kind        String
+  targetType  String
+  targetId    String?
+  summary     String
+  status      String    @default("PENDING") // PENDING | ACCEPTED | DISMISSED
+  decidedById String?
+  decidedAt   DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+model BackupEvent {
+  id          String   @id @default(uuid())
+  kind        String
+  detail      String
+  createdById String?
+  createdAt   DateTime @default(now())
+}
+
+model Setting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
